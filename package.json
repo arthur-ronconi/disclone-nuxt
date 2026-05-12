@@ -1,0 +1,27 @@
+{
+  "name": "disc-clone-nuxt",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@nuxt/fonts": "^0.14.0",
+    "@nuxt/icon": "^2.2.2",
+    "@nuxt/image": "^2.0.0",
+    "@pinia/nuxt": "^0.11.3",
+    "@tailwindcss/vite": "^4.3.0",
+    "nuxt": "^4.4.5",
+    "pinia": "^3.0.4",
+    "tailwindcss": "^4.3.0",
+    "vue": "^3.5.34",
+    "vue-router": "^5.0.6"
+  },
+  "devDependencies": {
+    "@iconify-json/material-symbols": "^1.2.71"
+  }
+}

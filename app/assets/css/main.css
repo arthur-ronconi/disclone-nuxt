@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+* {
+  font-family: "Open Sans", sans-serif;
+}
+
+html,
+body,
+#__nuxt {
+  @apply h-full text-zinc-200;
+}
