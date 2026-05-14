@@ -1,6 +1,8 @@
 <template>
   <NuxtLayout name="auth-layout">
-    <AuthRegisterForm></AuthRegisterForm>
+    <template #hasnt-signed-in-before>
+      <AuthRegisterForm></AuthRegisterForm>
+    </template>
   </NuxtLayout>
 </template>
 

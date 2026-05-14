@@ -1,4 +1,4 @@
-<template>
+<template #index>
   <NuxtLayout>
     <div class="flex items-center justify-center h-full">
       <Logo></Logo>

@@ -1,6 +1,8 @@
 <template>
-  <NuxtLayout>
-    <div class="flex items-center justify-center h-full">login</div>
+  <NuxtLayout name="auth-layout">
+    <template #has-signed-in-before>
+      <AuthLoginForm></AuthLoginForm>
+    </template>
   </NuxtLayout>
 </template>
 

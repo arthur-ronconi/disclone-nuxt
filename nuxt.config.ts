@@ -21,6 +21,17 @@ export default defineNuxtConfig({
   },
   vite: {
     plugins: [tailwindcss()],
+    optimizeDeps: {
+      include: [
+        "@vue/devtools-core",
+        "@vue/devtools-kit",
+        "defu",
+        "ofetch",
+        "uuid",
+        "vue-router",
+        "zod",
+      ],
+    },
   },
   css: ["./app/assets/css/main.css"],
   pinia: {

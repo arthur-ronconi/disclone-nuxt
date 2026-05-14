@@ -9,11 +9,51 @@
       class="relative z-10 h-full w-full flex flex-col items-center justify-center"
     >
       <AuthHeader></AuthHeader>
-      <slot></slot>
+      <Transition>
+        <slot
+          :name="slot_name"
+          :key="key"
+        ></slot>
+      </Transition>
     </div>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { v4 } from "uuid";
 
-<style scoped></style>
+const route = useRoute();
+const slot_name = ref<string>();
+const key = ref<string>(v4());
+
+function defineComponent() {
+  if (route.fullPath == "/login") {
+    slot_name.value = "has-signed-in-before";
+  } else if (route.fullPath == "/register") {
+    slot_name.value = "hasnt-signed-in-before";
+  } else {
+    console.error("Something went wrong");
+    slot_name.value = "index";
+  }
+}
+
+defineComponent();
+
+const fullPath = computed(() => route.fullPath);
+
+watch(fullPath, () => {
+  key.value = v4();
+});
+</script>
+
+<style scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+</style>
